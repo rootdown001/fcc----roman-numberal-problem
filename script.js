@@ -13,6 +13,23 @@ function convertToRoman(num) {
     let twoRom = "";
     let oneRom = "";
 
+    let arr = [
+        ["M", 1000], 
+        ["CM", 900],
+        ["D",  500],
+        ["CD", 400],
+        ["C",  100],
+        ["XC",	90],
+        ["L",	50],
+        ["XL",	40],
+        ["X",	10],
+        ["IX",	 9],
+        ["V",    5],
+        ["IV",   4],
+        ["I",    1]
+    ]
+
+
     // console.log variables for digits
     console.log("fourDig = " + fourDig);
     console.log("threeDig = " + threeDig);
@@ -24,9 +41,15 @@ function convertToRoman(num) {
     console.log("twoRom = " + twoRom);
     console.log("oneRom = " + oneRom);
 
-    
+    // put four components of answer together
+    answer = fourRom + threeRom + twoRom + oneRom;
+
+
+    console.log("answer = " + answer);
     return answer;
    }
    
    convertToRoman(36);
+
+//commit text
 
