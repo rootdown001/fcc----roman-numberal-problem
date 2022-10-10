@@ -40,6 +40,29 @@ function convertToRoman(num) {
     twoDig = (Math.floor((num - fourDig - threeDig)/10))*10;
     oneDig = (Math.floor((num - fourDig - threeDig - twoDig)));
 
+    // check if fourDig > 0
+    if (fourDig > 0) { 
+        // go through arr and find first value that fourDig is greater than
+        for (let i = 0; i < arr.length; i++) {
+            
+            if (fourDig >= (arr[i][1] - 1) && fourRom == "") {
+                // define variable for how many times to add M
+                let multiple = Math.floor(fourDig/1000);
+                // loop and add M for each multiple
+                for (let j = 0; j < multiple; j++) {
+                    fourRom += arr[i][0];
+                }
+                    
+            } 
+            
+              
+        }
+    }
+    
+
+
+
+
 
     // console.log variables for digits
     console.log("fourDig = " + fourDig);
@@ -63,5 +86,13 @@ function convertToRoman(num) {
    convertToRoman(3232);
 
 //commit text
+/*
+Add
 
+Add logic to turm number into 4 variables for thousands, hundreds, etc
+*/
 
+/*
+Fix
+
+*/
