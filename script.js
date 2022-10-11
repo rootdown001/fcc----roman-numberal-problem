@@ -143,6 +143,6 @@ function checkIf(_dig) {
     return answer;
    }
    
-   convertToRoman(3999);
+   convertToRoman(5998);
 
 
