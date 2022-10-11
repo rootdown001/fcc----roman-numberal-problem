@@ -26,9 +26,15 @@ function convertToRoman(num) {
     twoPlaces = Math.floor((num - fourPlaces - threePlaces)/10)*10;
     onePlaces = ((num - fourPlaces - threePlaces - twoPlaces));
 
-    fourDig = fourPlaces + threePlaces + twoPlaces + onePlaces;
-    threeDig = threePlaces + twoPlaces + onePlaces;
-    twoDig = twoPlaces + onePlaces;
+    if (fourPlaces > 0) {
+        fourDig = fourPlaces + threePlaces + twoPlaces + onePlaces;
+    }
+    if (threePlaces > 0) {
+        threeDig = threePlaces + twoPlaces + onePlaces;
+    }
+    if (twoPlaces > 0) {
+        twoDig = twoPlaces + onePlaces;
+    }
     oneDig = onePlaces;
 
 
@@ -39,15 +45,17 @@ function checkIf(_dig) {
     let roman = "";
     let multiple = 0;    
     
-    if (_dig >= (1000 - 1)) {
+    if (_dig >= (1000)) {
         //define multiple
-        multiple = Math.floor((_dig+1)/1000);
+        multiple = Math.floor((_dig)/1000);
         
         // loop through multiples
         for (let j = 0; j < multiple; j++) {
             roman += "M"
-        }
-    }
+        } 
+    } else if (_dig >= (900)) {
+        roman = "CM";
+        }   
 
 
 
@@ -64,7 +72,7 @@ function checkIf(_dig) {
  
 
     fourRom =checkIf(fourDig);
-  //  threeRom = checkIf(threeDig);
+    threeRom = checkIf(threeDig);
   //  twoRom =checkIf(twoDig);
   //  oneRom = checkIf(oneDig);
 
@@ -78,13 +86,13 @@ function checkIf(_dig) {
        console.log("twoDig = " + twoDig);
        console.log("oneDig = " + oneDig);
    
-   /*
+   
        // console.log variables for digPlaces
        console.log("fourPlaces = " + fourPlaces);
        console.log("threePlaces = " + threePlaces);
        console.log("twoPlaces = " + twoPlaces);
        console.log("onePlaces = " + onePlaces);
-   */
+
    
        // console.log variables for roman
        console.log("fourRom = " + fourRom);
@@ -102,7 +110,7 @@ function checkIf(_dig) {
     return answer;
    }
    
-   convertToRoman(3999);
+   convertToRoman(900);
 
 //commit text
 /*
