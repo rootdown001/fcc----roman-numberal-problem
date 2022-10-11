@@ -109,7 +109,7 @@ function checkIf(_dig) {
     } else if (_dig >= (4)) {
         // assign IV for 4
         roman = "IV";
-    } else if (_dig >= (1)) {
+    } else  {
         // assign I for 1
         roman = "I";
         // loop through multiples to add I for 2, 3
